@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMirror - Psychological Analysis (CSV Mode)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="toggle-theme">
+      <span class="slider"></span>
+    </label>
+    <span>Dark Mode</span>
+  </div>
+
+  <div class="container">
+    <h1>🧠 MindMirror</h1>
+    <p>Upload <code>categorized_watch_history.csv</code> to skip parsing and go straight to psychological analysis</p>
+
+    <form id="upload-form">
+      <label for="file">Upload <code>categorized_watch_history.csv</code>:</label>
+      <input type="file" id="file" accept=".csv" required />
+      <button type="submit">Upload</button>
+    </form>
+
+    <button id="analyze-btn">Analyze Mental Health</button>
+    <div id="loader" style="display: none;">⏳ Processing...</div>
+
+    <div id="output">
+      <h2>📊 Analysis Result</h2>
+      <pre id="result"></pre>
+    </div>
+  </div>
+
+  <script src="script2.js"></script>
+  <script>
+    const themeToggle = document.getElementById('toggle-theme');
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

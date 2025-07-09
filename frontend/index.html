@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🧠 MindMirror - Psychological Analysis</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body class="dark-mode">
+
+  <!-- Header -->
+  <header class="app-header">
+    <label class="theme-toggle">
+      <input type="checkbox" id="dark-toggle" checked />
+      <span class="slider"></span>
+      <span>Dark Mode</span>
+    </label>
+  </header>
+
+  <!-- Main Area -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Title -->
+      <section class="header-section">
+        <h1>🧠 MindMirror</h1>
+        <p class="subtitle">Analyze your YouTube watch history for psychological insights</p>
+      </section>
+
+      <!-- File Upload -->
+      <section class="file-upload-wrapper">
+        <label for="html-file" class="file-upload-label">📂 Choose your <code>watch-history.html</code></label>
+        <input type="file" id="html-file" accept=".html" />
+        <p id="file-name">No file selected</p>
+      </section>
+
+      <!-- Upload Button -->
+      <section class="action-section" style="text-align:center;">
+        <button id="upload-btn" class="primary-button">Upload & Analyze</button>
+        <div id="loader" class="loader" style="display: none;">⏳ Analyzing...</div>
+      </section>
+
+      <!-- Chart Buttons -->
+      <section id="chart-controls">
+        <button class="primary-button" data-type="bar">Bar Chart</button>
+        <button class="primary-button" data-type="pie">Pie Chart</button>
+        <button id="download-pdf" class="primary-button">Download PDF</button>
+      </section>
+
+      <!-- Chart Container -->
+      <section class="chart-container">
+        <canvas id="summary-chart" width="400" height="300"></canvas>
+      </section>
+
+      <!-- Result Output -->
+      <section class="result-container">
+        <h2>📄 Result:</h2>
+        <pre id="result-box">No analysis returned yet.</pre>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    © 2025 MindMirror | Built with ❤️
+  </footer>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
